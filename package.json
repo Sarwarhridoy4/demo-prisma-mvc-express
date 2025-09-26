@@ -1,6 +1,5 @@
 {
   "name": "demo-prisma-express-mvc",
-  "type": "module",
   "private": true,
   "main": "src/server.ts",
   "scripts": {

@@ -4,10 +4,12 @@ import express, {
   type Request,
   type Response,
   type NextFunction,
+  Application,
 } from "express";
-import { UserRoutes } from "./app/modules/users/users.route.js";
+import { UserRoutes } from "./app/modules/users/users.route";
 
-const app = express();
+
+const app: Application = express();
 
 // Middleware
 app.use(

@@ -1,7 +1,8 @@
 import http, { Server } from "http";
 import dotenv from "dotenv";
-import { prisma } from "./config/db.js";
-import app from "./app.js";
+import { prisma } from "./config/db";
+import app from "./app";
+
 
 
 dotenv.config();

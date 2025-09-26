@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { catchAsync } from "../../../utils/catchAsync.js";
-import { UserServices } from "./users.service.js";
-import { sendResponse } from "../../../utils/sendResponse.js";
+import { catchAsync } from "../../../utils/catchAsync";
+import { UserServices } from "./users.service";
+import { sendResponse } from "../../../utils/sendResponse";
 // Create user
 const createUser = catchAsync(async (req: Request, res: Response) => {
   const user = await UserServices.createUser(req.body);
