@@ -3,6 +3,8 @@ import { StatusCodes } from "http-status-codes";
 import { catchAsync } from "../../../utils/catchAsync";
 import { UserServices } from "./users.service";
 import { sendResponse } from "../../../utils/sendResponse";
+
+
 // Create user
 const createUser = catchAsync(async (req: Request, res: Response) => {
   const user = await UserServices.createUser(req.body);
@@ -14,6 +16,8 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+
+
 // Get all users
 const getAllUsers = catchAsync(async (req: Request, res: Response) => {
   const users = await UserServices.getAllUsers();
@@ -24,6 +28,9 @@ const getAllUsers = catchAsync(async (req: Request, res: Response) => {
     data: users,
   });
 });
+
+
+
 
 // Get user by ID
 const getUserById = catchAsync(async (req: Request, res: Response) => {

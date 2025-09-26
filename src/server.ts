@@ -1,29 +1,28 @@
 import http, { Server } from "http";
 import { prisma } from "./config/db";
 import app from "./app";
-
-
-
-
+import { env } from "./config/env";
 
 let server: Server | null = null;
 
 async function connectToDB() {
   try {
-    await prisma.$connect()
-    console.log("*** DB connection successfull!!")
+    await prisma.$connect();
+    console.log("*** DB connection successfull!!");
   } catch (error) {
-    console.log("*** DB connection failed!")
+    console.log("*** DB connection failed!");
     process.exit(1);
   }
 }
 
 async function startServer() {
   try {
-    await connectToDB()
+    await connectToDB();
     server = http.createServer(app);
-    server.listen(process.env.PORT, () => {
-      console.log(`🚀 Server is running on port ${process.env.PORT}`);
+    server.listen(env.PORT, () => {
+      console.log(
+        `🚀 Server is running on${env.NODE_ENV} environment on port ${env.PORT}`
+      );
     });
 
     handleProcessEvents();

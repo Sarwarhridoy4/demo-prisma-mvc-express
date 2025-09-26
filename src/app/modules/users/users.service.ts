@@ -14,7 +14,7 @@ const createUser = async (payload: Partial<User>) => {
     data: {
       name: payload.name!,
       email: payload.email!,
-      password: hashedPassword!, // hash before if needed
+      password: hashedPassword!, 
     },
   });
   return user;

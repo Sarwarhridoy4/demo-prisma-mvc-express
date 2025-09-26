@@ -7,7 +7,7 @@ import express, {
   Application,
 } from "express";
 import { UserRoutes } from "./app/modules/users/users.route";
-
+import { StatusCodes } from "http-status-codes";
 
 const app: Application = express();
 
@@ -26,12 +26,12 @@ app.use("/api/v1/user", UserRoutes);
 
 // Default route for testing
 app.get("/", (_req: Request, res: Response) => {
-  res.send("API is running");
+  res.status(StatusCodes.OK).json({ message: "Server is running!" });
 });
 
 // 404 Handler
 app.use((req: Request, res: Response, _next: NextFunction) => {
-  res.status(404).json({
+  res.status(StatusCodes.NOT_FOUND).json({
     success: false,
     message: "Route Not Found",
   });
