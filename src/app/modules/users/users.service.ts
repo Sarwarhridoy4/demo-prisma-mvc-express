@@ -14,7 +14,7 @@ const createUser = async (payload: Partial<User>) => {
     data: {
       name: payload.name!,
       email: payload.email!,
-      password: hashedPassword!, 
+      password: hashedPassword!,
     },
   });
   return user;
@@ -22,7 +22,15 @@ const createUser = async (payload: Partial<User>) => {
 
 // Get all users
 const getAllUsers = async () => {
-  return await prisma.user.findMany();
+  return await prisma.user.findMany({
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      phone: true,
+      // Exclude password
+    },
+  });
 };
 
 // Get user by ID
@@ -36,6 +44,13 @@ const getUserById = async (id: string) => {
 
   const user = await prisma.user.findUnique({
     where: { id: userId },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      phone: true,
+      // Exclude password
+    },
   });
   return user;
 };
@@ -49,6 +64,13 @@ const updateUserById = async (id: string, data: Partial<User>) => {
 
   const updatedUser = await prisma.user.update({
     where: { id: userId },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      phone: true,
+      // Exclude password
+    },
     data,
   });
 
