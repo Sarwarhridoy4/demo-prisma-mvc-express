@@ -150,11 +150,12 @@ bun build && bun start
 ### Create User
 
 ```bash
-curl -X POST http://localhost:5000/api/users \
+curl -X POST http://localhost:5000/api/v1/user \
   -H "Content-Type: application/json" \
   -d '{
     "name": "John Doe",
     "email": "john@example.com",
+    "phone:"+8801xxxxxxxxx",
     "password": "123456"
   }'
 ```
@@ -162,7 +163,7 @@ curl -X POST http://localhost:5000/api/users \
 ### Get All Users
 
 ```bash
-curl http://localhost:5000/api/users
+curl http://localhost:5000/api/v1/user
 ```
 
 ---

@@ -1,11 +1,10 @@
 import http, { Server } from "http";
-import dotenv from "dotenv";
 import { prisma } from "./config/db";
 import app from "./app";
 
 
 
-dotenv.config();
+
 
 let server: Server | null = null;
 
