@@ -18,7 +18,7 @@
     "@types/bun": "latest",
     "@types/compression": "^1.8.1",
     "@types/cors": "^2.8.19",
-    "@types/node": "^25.0.8",
+    "@types/node": "^25.0.10",
     "prisma": "^7.3.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5"
