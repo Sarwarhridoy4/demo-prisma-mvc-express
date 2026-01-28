@@ -1,8 +1,9 @@
-import { PrismaClient, type User } from "@prisma/client";
+import { type User } from "@prisma/client";
 import bcryptjs from "bcryptjs";
 import { env } from "../../../config/env";
+import { prisma } from "../../../config/db";
 
-const prisma = new PrismaClient();
+
 
 // Create user
 const createUser = async (payload: Partial<User>) => {

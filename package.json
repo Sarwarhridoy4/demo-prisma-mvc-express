@@ -12,7 +12,8 @@
     "generate": "npx prisma generate",
     "reset": " npx prisma migrate reset",
     "update": " npx prisma db push",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "postinstall": "prisma generate"
   },
   "devDependencies": {
     "@types/bun": "latest",
